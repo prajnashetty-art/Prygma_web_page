@@ -1,0 +1,30 @@
+.navbar {
+  min-height: 80px;   /* ensures navbar is at least 80px tall */
+  padding-top: 10px;  /* adjust vertical spacing */
+  padding-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-link:hover {
+    font-weight: 700;
+}
+
+.site-navbar {
+  background: transparent;
+  color: #000;
+}
+
+.site-navbar .navbar-brand,
+.site-navbar .nav-link {
+  color: #000;
+}
+
+.header-logo-group {
+  flex: 0 0 auto;
+}
+
+.site-navbar .header-right-group {
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  margin-left: auto;
+}

@@ -1,0 +1,29 @@
+.hero-banner {
+  background: url("../assets/HomeBanner.png") center / cover no-repeat;
+}
+
+.hero {
+  min-height: calc(90vh - 80px);
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
