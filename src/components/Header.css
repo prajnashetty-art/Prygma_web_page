@@ -1,6 +1,6 @@
 .navbar {
   min-height: 80px;   /* ensures navbar is at least 80px tall */
-  padding-top: 10px;  /* adjust vertical spacing */
+  padding-top: 10px;  
   padding-bottom: 10px;
   font-family: Arial, sans-serif;
 }
@@ -12,6 +12,10 @@
 .site-navbar {
   background: transparent;
   color: #000;
+  border-bottom: 1px solid #a955c3;
+ /* position: sticky;
+  top: 0;
+  z-index: 1000;      it stays above other content */
 }
 
 .site-navbar .navbar-brand,

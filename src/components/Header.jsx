@@ -34,7 +34,7 @@ export default function Header() {
 
           <div className="d-flex align-items-center gap-2 flex-wrap ms-lg-3">
             <form className="d-flex me-2" role="search">
-              <input className="form-control" style={{ width: '320px' }} type="search" placeholder="Search..." aria-label="Search" />
+              <input className="form-control" style={{ width: '400px' }} type="search" placeholder="Search..." aria-label="Search" />
               <button className="btn btn-light ms-2" type="submit"><FaSearch /></button>
             </form>
             <a className="nav-link" href="#"><FaUser className="me-2" />Login</a>

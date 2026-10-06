@@ -1,0 +1,37 @@
+.why-choose-us {
+  padding: 34px 24px 42px;
+  background: #fbfaff;
+}
+
+.why-choose-us-inner { max-width: 1440px; margin: 0 auto; }
+
+.why-choose-us-heading { margin-bottom: 22px; text-align: center; }
+.why-choose-us-heading > span { display: inline-block; margin-bottom: 5px; padding: 4px 11px; border-radius: 999px; background: #eee8ff; color: #592bea; font-size: .68rem; font-weight: 800; text-transform: uppercase; }
+.why-choose-us-heading h2 { margin: 0; color: #111b38; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -.8px; }
+.why-choose-us-heading h2 em { color: #592bea; font-style: normal; }
+.why-choose-us-heading p { margin: 3px 0 0; color: #586886; font-size: .88rem; }
+
+.benefits-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.benefit-card { min-width: 0; min-height: 175px; padding: 16px 14px; border: 1px solid transparent; border-radius: 13px; text-align: center; }
+.benefit-lavender { border-color: #ece5ff; background: linear-gradient(145deg, #f5f0ff, #ece6ff); }
+.benefit-blue { border-color: #e0ecff; background: linear-gradient(145deg, #eef6ff, #e2efff); }
+.benefit-green { border-color: #ddf2e7; background: linear-gradient(145deg, #effbf4, #e2f7eb); }
+.benefit-peach { border-color: #f8e9da; background: linear-gradient(145deg, #fff7ef, #fff0e3); }
+.benefit-pink { border-color: #f3e2f2; background: linear-gradient(145deg, #fff3fc, #f9e8f7); }
+.benefit-icon { display: grid; width: 58px; height: 58px; margin: 0 auto 8px; place-items: center; color: #722cf0; font-size: 2.25rem; filter: drop-shadow(0 3px 3px rgb(77 45 190 / 16%)); }
+.benefit-card h3 { margin: 0 0 5px; color: #17203b; font-size: .94rem; font-weight: 800; }
+.benefit-card p { max-width: 220px; margin: 0 auto; color: #4e5b77; font-size: .78rem; line-height: 1.45; }
+
+@media (max-width: 900px) {
+  .benefits-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .why-choose-us { padding: 30px 16px; }
+  .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .benefit-card { min-height: 165px; padding: 14px 10px; }
+}
+
+@media (max-width: 380px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+}
