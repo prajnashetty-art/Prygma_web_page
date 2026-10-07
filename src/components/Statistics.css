@@ -1,0 +1,109 @@
+.statistics-section {
+  padding: 38px 24px 52px;
+  background: #fafafa;
+  color: #282828;
+}
+
+.statistics-eyebrow {
+  margin: 0 0 32px;
+  color: #777;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.statistics-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.statistics-card {
+  display: flex;
+  min-height: 148px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px;
+  border: 1px solid #f0f0f0;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 2%);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.statistics-card:nth-child(2) { transform: translateY(22px); }
+.statistics-card:nth-child(3) { transform: translateY(-12px); }
+.statistics-card:nth-child(4) { transform: translateY(22px); }
+
+.statistics-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 9%);
+}
+
+.statistics-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ff980b;
+  color: white;
+  font-size: 15px;
+}
+
+.statistics-value { margin: 0 0 5px; font-size: 1.5rem; line-height: 1.1; }
+.statistics-label { margin: 0; color: #858585; font-size: .75rem; }
+
+.statistics-card-featured {
+  min-height: 168px;
+  border-color: #ff980b;
+  background: #ff980b;
+  color: #fff;
+}
+
+.statistics-card-featured .statistics-icon { background: #fff; color: #ff980b; }
+.statistics-card-featured .statistics-label { color: rgb(255 255 255 / 90%); }
+.statistics-card-featured .statistics-value { font-size: 1.25rem; }
+
+.statistics-trust {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  margin: 0;
+  transform: translateY(-100%);
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: #555;
+  font-size: .62rem;
+  white-space: nowrap;
+}
+
+.statistics-trust span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #ff980b;
+}
+
+@media (max-width: 720px) {
+  .statistics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .statistics-card, .statistics-card:nth-child(n) { min-height: 140px; transform: none; }
+  .statistics-card:hover { transform: translateY(-5px); }
+  .statistics-trust { top: 18px; right: 0; }
+}
+
+@media (max-width: 420px) {
+  .statistics-section { padding: 32px 16px 40px; }
+  .statistics-trust { top: auto; right: 50%; bottom: -30px; transform: translateX(50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statistics-card { transition: none; }
+}

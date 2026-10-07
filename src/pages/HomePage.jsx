@@ -3,7 +3,9 @@ import Hero from '../components/Hero';
 import CourseCategories from '../components/CourseCategories';
 import FeaturedCourses from '../components/FeaturedCourses';
 import WhyChooseUs from '../components/WhyChooseUs';
+import Statistics from '../components/Statistics';
 import InstructorProfile from '../components/InstructorProfile';
+import StudentReview from '../components/StudentReview';
 import Footer from '../components/Footer';
 
 export default function HomePage() {
@@ -14,7 +16,9 @@ export default function HomePage() {
             <CourseCategories />
             <FeaturedCourses />
             <WhyChooseUs />
+            <Statistics />
             <InstructorProfile />
+            <StudentReview />
             <Footer />
         </div>
     );
