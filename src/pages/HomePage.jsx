@@ -6,6 +6,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Statistics from '../components/Statistics';
 import InstructorProfile from '../components/InstructorProfile';
 import StudentReview from '../components/StudentReview';
+import FAQSection from '../components/FaqSection';
 import Footer from '../components/Footer';
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
             <Statistics />
             <InstructorProfile />
             <StudentReview />
+            <FAQSection />
             <Footer />
         </div>
     );
