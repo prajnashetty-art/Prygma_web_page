@@ -81,18 +81,6 @@ a {
   outline-offset: 1px;
 }
 
-.google-btn{
-  width: 50%;
-  padding: 0.85rem 1rem;
-  border: 1px solid #d8d3e0;
-  border-radius: 0.5rem;
-  background: #fff;
-  color: #302b39;
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .sibmit-btn {
   width: 100%;
   padding: 0.85rem 1rem;
@@ -130,7 +118,7 @@ a {
   gap: 0.4rem;
 }
 
-.options a {
+a {
   color: #5422b8;
 }
 

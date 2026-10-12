@@ -31,7 +31,7 @@ const courses = [
 
 export default function FeaturedCourses() {
   return (
-    <section className="featured-courses" aria-labelledby="featured-courses-title">
+    <section className="featured-courses" id="courses" aria-labelledby="featured-courses-title">
       <div className="featured-courses-inner">
         <header className="featured-heading">
           <div>
@@ -41,9 +41,9 @@ export default function FeaturedCourses() {
           <a className="all-courses-link" href="#courses">View All Courses <span aria-hidden="true">→</span></a>
         </header>
 
-        <div className="featured-course-grid" id="courses">
+        <div className="row g-3 g-xl-4 featured-course-grid">
           {courses.map((course) => (
-            <article className="featured-course-card" key={course.title}>
+            <article className="featured-course-card col-12 col-sm-6 col-xl-3" key={course.title}>
               <div className="featured-course-image" style={{ backgroundImage: `url(https://images.unsplash.com/${course.image}?auto=format&fit=crop&w=700&q=80)` }} aria-label={`${course.title} course`} role="img" />
               <div className="featured-course-body">
                 <h3>{course.title}</h3>

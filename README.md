@@ -9,6 +9,17 @@ Registration is saved by the Express API to the MongoDB `Myweb.users` collection
 3. In one terminal, run `npm run server` from this project directory.
 4. In another terminal, run `npm run dev` and submit the registration form.
 
+## Google sign-in
+
+The login and registration pages use the official Google Identity Services button. Google ID tokens are verified by the API with Google's Node.js auth library before an account is linked or created.
+
+1. Create a **Web application** OAuth client in the Google Cloud Console and configure the OAuth consent screen.
+2. Add your local frontend origins (for example, `http://localhost:5173` and `http://127.0.0.1:5173`) and your deployed site origin under **Authorized JavaScript origins**. For the current GitHub Pages site, the origin is `https://prajnashetty-art.github.io` (no project path).
+3. Copy `.env.example` to `.env` and set `VITE_GOOGLE_CLIENT_ID` to the web client ID.
+4. Set the same client ID as `GOOGLE_CLIENT_ID` in `server/.env`, then restart both Vite and the API.
+
+The client ID is a public identifier. Do not put a Google client secret in the frontend. Add the deployed site origin to `FRONTEND_ORIGINS` on the API as well. Google sign-in registration requires accepting the Terms & Conditions. Existing accounts can use Google sign-in with the same verified email to link their Google identity.
+
 The API listens on port `5001` by default. For deployment, host the API separately, set `VITE_API_BASE_URL` to its public HTTPS URL when building the frontend, and set `FRONTEND_ORIGINS` on the API to the frontend's origin.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

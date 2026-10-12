@@ -12,9 +12,9 @@ export default function Statistics() {
   return (
     <section className="statistics-section" aria-labelledby="statistics-title">
       <p className="statistics-eyebrow" id="statistics-title">Growing global learning community</p>
-      <div className="statistics-grid">
+      <div className="statistics-grid row row-cols-2 row-cols-lg-4 g-3">
         {stats.map(({ value, label, Icon, featured }) => (
-          <article className={`statistics-card${featured ? ' statistics-card-featured' : ''}`} key={label}>
+          <article className={`col statistics-card${featured ? ' statistics-card-featured' : ''}`} key={label}>
             <span className="statistics-icon"><Icon aria-hidden="true" /></span>
             <div>
               <p className="statistics-value">{value}</p>

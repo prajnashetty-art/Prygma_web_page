@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 export default function HomePage() {
     return (
-        <div className="hero-banner">
+        <div className="home-page">
             <Header />
             <Hero />
             <CourseCategories />

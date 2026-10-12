@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LoginImg from '../assets/LoginImg.png';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 import './LoginPage.css';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
@@ -49,10 +50,10 @@ export default function LoginPage() {
         {/* Right side */}
         <div className = "login-right">
             <div className="heading"><h2>Sign In</h2>
-            <p> Or <a href="#/register">Create a new account</a></p> 
-            <button className = "google-btn">Continue with Google</button>
+            <p><span className="text-secondary">Or</span> <a href="#/register">Create a new account</a></p>
             </div>
-            
+            <GoogleSignInButton mode="login" onSuccess={() => { window.location.hash = '#/'; }} />
+            <div className="auth-divider" aria-hidden="true">or sign in with email</div>
 
             <form onSubmit = {handleSubmit}>
                 <input type ="email"

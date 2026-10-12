@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import LoginImg from '../assets/LoginImg.png';
+import SigninImg from '../assets/SigninImg.png';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 import './LoginPage.css';
 import './RegisterPage.css';
 
@@ -153,7 +154,7 @@ export default function RegisterPage() {
   return (
     <main className="login-container register-container">
       <div className="login-left">
-        <img src={LoginImg} alt="" className="left-image" />
+        <img src={SigninImg} alt="" className="left-image" />
       </div>
 
       <section className="login-right register-right" aria-labelledby="register-title">
@@ -161,6 +162,13 @@ export default function RegisterPage() {
           <h1 id="register-title">Create your account</h1>
           <p>Already have an account? <a href="#/login">Sign in</a></p>
         </div>
+
+        <GoogleSignInButton
+          mode="register"
+          termsAccepted={values.terms}
+          onSuccess={() => { window.location.hash = '#/'; }}
+        />
+        <div className="auth-divider" aria-hidden="true">or create an account with email</div>
 
         <form className="register-form" onSubmit={handleSubmit} noValidate>
           <div className="register-name-fields">
@@ -176,36 +184,38 @@ export default function RegisterPage() {
             </label>
           </div>
 
-          <label>
+          <label className="register-field-email">
             Email Address
             <input name="email" type="email" autoComplete="email" value={values.email} onChange={handleChange} onBlur={handleBlur} required aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} />
             {errors.email && <span className="field-error" id="email-error">{errors.email}</span>}
           </label>
 
-          <label>
+          <label className="register-field-mobile">
             Mobile Number <span className="optional-label">(optional)</span>
             <input name="mobile" type="tel" inputMode="tel" autoComplete="tel" value={values.mobile} onChange={handleChange} onBlur={handleBlur} aria-invalid={Boolean(errors.mobile)} aria-describedby={errors.mobile ? 'mobile-error' : 'mobile-hint'} />
             {errors.mobile ? <span className="field-error" id="mobile-error">{errors.mobile}</span> : <span className="field-hint" id="mobile-hint">Enter whole digits, optionally starting with +.</span>}
           </label>
 
-          <label>
+          <label className="register-field-password">
             Password
             <input name="password" type="password" autoComplete="new-password" value={values.password} onChange={handleChange} onBlur={handleBlur} required aria-invalid={Boolean(errors.password)} aria-describedby={errors.password ? 'password-error' : 'password-hint'} />
             {errors.password ? <span className="field-error" id="password-error">{errors.password}</span> : <span className="field-hint" id="password-hint">At least 8 characters, including an uppercase letter, a number, and a special character.</span>}
           </label>
 
-          <label>
+          <label className="register-field-confirm-password">
             Confirm Password
             <input name="confirmPassword" type="password" autoComplete="new-password" value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} required aria-invalid={Boolean(errors.confirmPassword)} aria-describedby={errors.confirmPassword ? 'confirm-password-error' : undefined} />
             {errors.confirmPassword && <span className="field-error" id="confirm-password-error">{errors.confirmPassword}</span>}
           </label>
 
-          <label className="terms-label">
-            <input name="terms" type="checkbox" checked={values.terms} onChange={handleChange} onBlur={handleBlur} required aria-invalid={Boolean(errors.terms)} aria-describedby={errors.terms ? 'terms-error' : undefined} />
+           <div className="google-register-consent">
+          <label>
+            <input name="terms" type="checkbox" checked={values.terms} onChange={handleChange} onBlur={handleBlur} required aria-invalid={Boolean(errors.terms)} aria-describedby={errors.terms ? 'google-terms-error' : undefined} />
             <span>I agree to the Terms &amp; Conditions</span>
           </label>
+          {errors.terms && <p className="field-error" id="google-terms-error" role="alert">{errors.terms}</p>}
+        </div>
 
-          {errors.terms && <p className="field-error" id="terms-error" role="alert">{errors.terms}</p>}
           {submitError && <p className="field-error" role="alert">{submitError}</p>}
           {message && <p className="register-message" role="status">{message}</p>}
 

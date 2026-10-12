@@ -4,12 +4,12 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer bg-primary text-white pt-5 pb-3">
+    <footer className="footer bg-primary text-white pt-5 pb-3" id="contact">
       <div className="container">
-        <div className="row">
+        <div className="row g-4">
 
           {/* Platform Links */}
-          <div className="col-md-2">
+          <div className="col-6 col-md-4 col-lg-2">
             <h5 className="fw-bold mb-3">Platform</h5>
             <ul className="list-unstyled">
               <li><a href="#">Home</a></li>
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           {/* Course Links */}
-          <div className="col-md-2">
+          <div className="col-6 col-md-4 col-lg-2">
             <h5 className="fw-bold mb-3">Courses</h5>
             <ul className="list-unstyled">
               <li><a href="#">All Courses</a></li>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           {/* Support Links */}
-          <div className="col-md-2">
+          <div className="col-6 col-md-4 col-lg-2">
             <h5 className="fw-bold mb-3">Support</h5>
             <ul className="list-unstyled">
               <li><a href="#">Help Center</a></li>
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div className="col-md-2">
+          <div className="col-6 col-md-4 col-lg-2">
             <h5 className="fw-bold mb-3">Legal</h5>
             <ul className="list-unstyled">
               <li><a href="#">Terms of Service</a></li>
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           {/* Social Media Links */}
-          <div className="col-md-4">
+          <div className="col-12 col-md-4 col-lg-4">
             <h5 className="fw-bold mb-3">Follow Us</h5>
             <div className="d-flex gap-3">
               <a href="#"><FaFacebook /></a>

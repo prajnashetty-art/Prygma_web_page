@@ -1,0 +1,13 @@
+.google-signin-wrap { width: 100%; margin: 20px auto; text-align: center; }
+.google-signin-button { display: flex; min-height: 40px; justify-content: center; overflow: hidden; }
+.google-signin-button iframe { max-width: 100%; }
+.google-signin-button.is-loading { opacity: .55; pointer-events: none; }
+.google-signin-status, .google-signin-error { margin: 9px 0 0; font-size: .85rem; line-height: 1.45; }
+.google-signin-status { color: #625c6c; }
+.google-signin-error { color: #b42318; }
+.google-register-consent { margin-top: 22px; text-align: left; }
+.google-register-consent label { display: flex; align-items: flex-start; gap: 9px; color: #4e4958; font-size: .9rem; }
+.google-register-consent input { flex: 0 0 auto; margin-top: 4px; accent-color: #642dc7; }
+.google-register-consent .field-error { margin: 6px 0 0 23px; }
+.auth-divider { display: flex; align-items: center; gap: 14px; margin: 12px 0; color: #85808c; font-size: .82rem; }
+.auth-divider::before, .auth-divider::after { height: 1px; flex: 1; background: #e4e0e9; content: ''; }

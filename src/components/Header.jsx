@@ -1,50 +1,44 @@
-﻿import React from 'react';
-import { FaHome, FaBook, FaList, FaInfoCircle, FaEnvelope, FaSearch, FaUser, FaUserPlus, FaShoppingCart } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa6';
 import './Header.css';
 import logo from '../assets/Logo.png';
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <nav className="navbar navbar-expand-sm site-navbar">
-      <div className="container-fluid px-3">
-        <div className="header-logo-group">
-          <a className="navbar-brand d-flex align-items-center text-black" href="#">
-            <img src={logo} alt="Platform Logo" width= "100" height="42"/>
+    <header className="site-header">
+      <nav className="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
+        <div className="container-xl">
+          <a className="navbar-brand site-brand" href="#" aria-label="Prygma home" onClick={closeMenu}>
+            <img src={logo} alt="Prygma" />
           </a>
-        </div>
-
-        <div className="navbar-collapse header-right-group">
-          <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-2">
-            <li className="nav-item">
-              <a className="nav-link active" href="#"><FaHome className="me-2" />Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#"><FaBook className="me-2" />Courses</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#"><FaList className="me-2" />Categories</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#"><FaInfoCircle className="me-2" />About Us</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#"><FaEnvelope className="me-2" />Contact Us</a>
-            </li>
-          </ul>
-
-          <div className="d-flex align-items-center gap-2 flex-wrap ms-lg-3">
-            <form className="d-flex me-2" role="search">
-              <input className="form-control" style={{ width: '400px' }} type="search" placeholder="Search..." aria-label="Search" />
-              <button className="btn btn-light ms-2" type="submit"><FaSearch /></button>
-            </form>
-            <a className="nav-link" href="#/login"><FaUser className="me-2" />Login</a>
-            <a className="nav-link" href="#/register"><FaUserPlus className="me-2" />Sign Up</a>
-            <a className="btn btn-outline-dark rounded-pill px-3" href="#">
-              <FaShoppingCart className="me-2" />Cart
-            </a>
+          <button
+            className="navbar-toggler site-nav-toggle"
+            type="button"
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={menuOpen}
+            aria-controls="site-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className={`collapse navbar-collapse${menuOpen ? ' show' : ''}`} id="site-navigation">
+            <div className="navbar-nav site-nav-links ms-lg-auto">
+              <a className="nav-link is-current" href="#" onClick={closeMenu}>Home</a>
+              <a className="nav-link" href="#courses" onClick={closeMenu}>Courses</a>
+              <a className="nav-link" href="#categories" onClick={closeMenu}>Categories</a>
+              <a className="nav-link" href="#about" onClick={closeMenu}>About</a>
+              <a className="nav-link" href="#contact" onClick={closeMenu}>Contact</a>
+            </div>
+            <div className="site-nav-actions">
+              <a className="site-login" href="#/login" onClick={closeMenu}>Log in</a>
+              <a className="site-signup" href="#/register" onClick={closeMenu}>Get started <FaArrowRight aria-hidden="true" /></a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

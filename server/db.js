@@ -26,5 +26,6 @@ export async function getUsersCollection() {
   const database = await connectDatabase();
   const users = database.collection('users');
   await users.createIndex({ email: 1 }, { unique: true });
+  await users.createIndex({ googleId: 1 }, { unique: true, sparse: true });
   return users;
 }

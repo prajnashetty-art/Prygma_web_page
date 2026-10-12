@@ -13,10 +13,8 @@
 
 .statistics-grid {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
   align-items: center;
-  gap: 20px;
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -93,7 +91,6 @@
 }
 
 @media (max-width: 720px) {
-  .statistics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .statistics-card, .statistics-card:nth-child(n) { min-height: 140px; transform: none; }
   .statistics-card:hover { transform: translateY(-5px); }
   .statistics-trust { top: 18px; right: 0; }

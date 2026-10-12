@@ -3,6 +3,7 @@ import cors from 'cors';
 import { createHash, randomBytes } from 'node:crypto';
 import dotenv from 'dotenv';
 import express from 'express';
+import { OAuth2Client } from 'google-auth-library';
 import nodemailer from 'nodemailer';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,6 +23,7 @@ app.use(cors({ origin: allowedOrigins }));/*Enables CORS for allowed origins*/
 app.use(express.json({ limit: '16kb' })); /*Parses JSON request bodies*/
 
 const users = await getUsersCollection();
+const googleAuthClient = new OAuth2Client();
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const nameRegex = /^\p{L}+(?:\s+\p{L}+)*$/u;
@@ -92,6 +94,103 @@ app.post('/api/login', async (request, response) => {
   } catch (error) {
     console.error('Login failed:', error);
     return response.status(500).json({ error: 'Unable to log in right now. Please try again.' });
+  }
+});
+
+app.post('/api/auth/google', async (request, response) => {
+  if (request.get('X-Requested-With') !== 'XMLHttpRequest') {
+    return response.status(400).json({ error: 'Invalid sign-in request.' });
+  }
+
+  const googleClientId = process.env.GOOGLE_CLIENT_ID;
+  const credential = typeof request.body?.credential === 'string' ? request.body.credential : '';
+  const mode = request.body?.mode;
+  const termsAccepted = request.body?.termsAccepted === true;
+
+  if (!googleClientId) {
+    return response.status(503).json({ error: 'Google sign-in is not configured on the server.' });
+  }
+  if (!credential || credential.length > 8192 || !['login', 'register'].includes(mode)) {
+    return response.status(400).json({ error: 'Invalid Google sign-in details.' });
+  }
+  if (mode === 'register' && !termsAccepted) {
+    return response.status(400).json({ error: 'Accept the Terms & Conditions to register.' });
+  }
+
+  let profile;
+  try {
+    const ticket = await googleAuthClient.verifyIdToken({ idToken: credential, audience: googleClientId });
+    profile = ticket.getPayload();
+  } catch (error) {
+    console.error('Google credential verification failed:', error);
+    return response.status(401).json({ error: 'Google sign-in could not be verified. Please try again.' });
+  }
+
+  const email = profile?.email?.trim().toLowerCase();
+  const googleId = profile?.sub;
+  if (!email || !emailRegex.test(email) || !googleId || profile.email_verified !== true) {
+    return response.status(401).json({ error: 'Google did not return a verified email address.' });
+  }
+
+  try {
+    if (mode === 'register') {
+      const existingUser = await users.findOne({ $or: [{ googleId }, { email }] });
+      if (existingUser) {
+        return response.status(409).json({ error: 'An account with this email already exists. Please sign in.' });
+      }
+
+      const firstName = String(profile.given_name || profile.name?.split(/\s+/)[0] || 'Google').trim();
+      const lastName = String(profile.family_name || profile.name?.split(/\s+/).slice(1).join(' ') || 'User').trim();
+      const user = {
+        firstName,
+        lastName,
+        email,
+        mobile: null,
+        googleId,
+        googlePicture: profile.picture || null,
+        emailVerified: true,
+        termsAccepted: true,
+        termsAcceptedAt: new Date(),
+        createdAt: new Date(),
+      };
+
+      const result = await users.insertOne(user);
+      return response.status(201).json({
+        message: 'Registration successful.',
+        user: { id: result.insertedId, firstName, lastName, email },
+      });
+    }
+
+    let user = await users.findOne({ googleId });
+    if (!user) {
+      user = await users.findOne({ email });
+      if (!user) {
+        return response.status(404).json({ error: 'No account was found for this Google email. Please register first.' });
+      }
+      if (user.googleId && user.googleId !== googleId) {
+        return response.status(409).json({ error: 'This email is linked to a different Google account.' });
+      }
+
+      await users.updateOne(
+        { _id: user._id, $or: [{ googleId: { $exists: false } }, { googleId: null }, { googleId }] },
+        { $set: { googleId, googlePicture: profile.picture || null, emailVerified: true } },
+      );
+      user = await users.findOne({ googleId });
+      if (!user) {
+        return response.status(409).json({ error: 'Could not link this Google account. Please try again.' });
+      }
+    }
+
+    return response.status(200).json({
+      message: 'Login successful.',
+      user: { id: user._id, firstName: user.firstName, lastName: user.lastName, email: user.email },
+    });
+  } catch (error) {
+    if (error?.code === 11000) {
+      return response.status(409).json({ error: 'An account with this email already exists. Please sign in.' });
+    }
+    console.error('Google account handling failed:', error);
+    return response.status(500).json({ error: 'Unable to complete Google sign-in right now. Please try again.' });
   }
 });
 

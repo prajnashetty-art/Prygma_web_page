@@ -11,7 +11,7 @@
 .why-choose-us-heading h2 em { color: #592bea; font-style: normal; }
 .why-choose-us-heading p { margin: 3px 0 0; color: #586886; font-size: .88rem; }
 
-.benefits-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.benefits-grid { display: flex; }
 .benefit-card { min-width: 0; min-height: 175px; padding: 16px 14px; border: 1px solid transparent; border-radius: 13px; text-align: center; }
 .benefit-lavender { border-color: #ece5ff; background: linear-gradient(145deg, #f5f0ff, #ece6ff); }
 .benefit-blue { border-color: #e0ecff; background: linear-gradient(145deg, #eef6ff, #e2efff); }
@@ -22,16 +22,8 @@
 .benefit-card h3 { margin: 0 0 5px; color: #17203b; font-size: .94rem; font-weight: 800; }
 .benefit-card p { max-width: 220px; margin: 0 auto; color: #4e5b77; font-size: .78rem; line-height: 1.45; }
 
-@media (max-width: 900px) {
-  .benefits-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
 @media (max-width: 600px) {
   .why-choose-us { padding: 30px 16px; }
-  .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .benefit-card { min-height: 165px; padding: 14px 10px; }
 }
 
-@media (max-width: 380px) {
-  .benefits-grid { grid-template-columns: 1fr; }
-}

@@ -21,7 +21,7 @@
 .all-courses-link span { margin-left: 6px; }
 .all-courses-link:hover { background: #592bea; color: #fff; }
 
-.featured-course-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.featured-course-grid { display: flex; }
 .featured-course-card { min-width: 0; overflow: hidden; border: 1px solid #e3e4f2; border-radius: 9px; background: #fff; box-shadow: 0 4px 12px rgb(41 42 91 / 9%); }
 .featured-course-image { height: 100px; background-color: #222764; background-position: center; background-size: cover; }
 .featured-course-body { padding: 10px 10px 9px; }
@@ -49,18 +49,16 @@
 .featured-course-actions .enroll-course { background: #5728e8; color: #fff; }
 .featured-course-actions a:hover { filter: brightness(.92); }
 
-@media (max-width: 1050px) {
-  .featured-course-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
 @media (max-width: 700px) {
   .featured-courses { padding: 26px 16px 32px; }
-  .featured-heading { padding-top: 35px; }
-  .all-courses-link { right: 50%; transform: translateX(50%); }
-  .featured-course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-heading { align-items: flex-start; justify-content: space-between; gap: 14px; padding-top: 0; text-align: left; }
+  .all-courses-link { position: static; align-self: center; transform: none; }
 }
 
-@media (max-width: 460px) {
-  .featured-course-grid { grid-template-columns: 1fr; }
-  .featured-course-image { height: 145px; }
+@media (max-width: 560px) {
+  .featured-courses { padding: 48px 18px; }
+  .featured-heading { flex-direction: column; gap: 12px; margin-bottom: 22px; }
+  .all-courses-link { align-self: flex-start; }
+  .featured-course-image { height: 175px; }
+  .featured-course-body { padding: 14px; }
 }

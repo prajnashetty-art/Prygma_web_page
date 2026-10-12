@@ -1,35 +1,29 @@
-import React from "react";
-import "./Hero.css";
-import { FaPlay } from "react-icons/fa";
+import { FaArrowRight, FaCircleCheck } from 'react-icons/fa6';
+import './Hero.css';
 
 export default function Hero() {
   return (
-    <section className="hero d-flex align-items-center">
-      <div className="container-fluid px-4">
-        <div className="row align-items-center">
-          
-          {/* Left Side: Text + Buttons */}
-          <div className="col-lg-6 hero-text">
-            <h1 className="fw-bold mb-3">
-              Your Journey to a Better Career Starts Here
-            </h1>
-            <p className="mb-4 text-muted">
-              Build valuable skills, learn at your own pace, and prepare yourself for exciting career opportunities.
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="container-xl">
+        <div className="row">
+          <div className="hero-content col-12 col-md-8 col-lg-6">
+            <p className="hero-kicker"><span /> PRACTICAL LEARNING FOR WHAT'S NEXT</p>
+            <h1 id="hero-title">Make your next career move <em>with confidence.</em></h1>
+            <p className="hero-description">
+              Learn in-demand skills from people who use them every day. Clear lessons, practical projects, and a pace that works for you.
             </p>
-            <div className="d-flex gap-3">
-              <button className="btn btn-primary px-4 py-2">Get Started</button>
-              <button className="btn btn-outline-primary px-4 py-2 d-flex align-items-center">
-                <FaPlay className="me-2" /> Watch Video
-              </button>
+            <div className="hero-actions">
+              <a className="hero-primary-action" href="#courses">Explore courses <FaArrowRight aria-hidden="true" /></a>
+              <a className="hero-secondary-action" href="#categories">Browse categories</a>
+            </div>
+            <div className="hero-proof" aria-label="Course benefits">
+              <span><FaCircleCheck aria-hidden="true" /> Learn at your own pace</span>
+              <span><FaCircleCheck aria-hidden="true" /> Learn by doing</span>
             </div>
           </div>
-
-
-           
-          </div>
-          </div>
-
-        
+        </div>
+      </div>
+      <a className="hero-scroll-cue" href="#categories">A good place to start <span aria-hidden="true">&#8595;</span></a>
     </section>
   );
 }

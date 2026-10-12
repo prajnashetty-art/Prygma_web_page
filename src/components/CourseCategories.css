@@ -19,11 +19,7 @@
 .categories-heading h2 span { color: #592bea; }
 .categories-heading p { margin: 0; color: #586886; }
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /*Four equal-width columns on wide screens.*/
-  gap: 16px; /*spacing between cards*/
-}
+.category-grid { display: flex; }
 
 .category-card {
   min-width: 0;
@@ -79,17 +75,11 @@
 .category-arrow { display: grid; width: 28px; height: 28px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #f0edff; color: #592bea; text-decoration: none; }
 .category-arrow:hover { background: #592bea; color: #fff; }
 
-@media (max-width: 1100px) {
-  .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
 @media (max-width: 700px) {
   .course-categories { padding: 38px 16px; }
-  .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .category-image-wrap { height: 105px; }
 }
 
 @media (max-width: 430px) {
-  .category-grid { grid-template-columns: 1fr; }
   .category-image-wrap { height: 150px; }
 }

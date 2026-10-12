@@ -16,15 +16,15 @@ const categories = [
 {/*image: Unsplash photo ID for background images.*/}
 export default function CourseCategories() {
   return (
-    <section className="course-categories" aria-labelledby="course-categories-title">
+    <section className="course-categories" id="categories" aria-labelledby="course-categories-title">
       <div className="course-categories-inner">
         <header className="categories-heading">
           <h2 id="course-categories-title">Explore Our <span>Course Categories</span></h2>
         </header>
 
-        <div className="category-grid">
+        <div className="row g-3 g-xl-4 category-grid">
           {categories.map(({ name, description, count, icon: Icon, image }) => (
-            <article className="category-card" key={name}>
+            <article className="category-card col-12 col-sm-6 col-lg-4 col-xl-3" key={name}>
               <div className="category-image-wrap">
                 <img src={`https://images.unsplash.com/${image}?auto=format&fit=crop&w=600&q=80`} alt="" loading="lazy" />
                 <span className="category-icon"><Icon aria-hidden="true" /></span>

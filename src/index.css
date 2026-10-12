@@ -1,0 +1,113 @@
+:root { font-family: 'Roboto', Arial, sans-serif; color: #25253b; background: #fff; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; font-family: 'Roboto', Arial, sans-serif; color: #25253b; }
+button, input, textarea, select { font: inherit; }
+a { color: inherit; }
+::selection { background: #e3dcff; color: #2c215e; }
+
+.course-categories { padding: 82px 5.5vw; background: #fff; }
+.course-categories-inner, .featured-courses-inner, .why-choose-us-inner { max-width: 1280px; }
+.categories-heading { margin: 0 auto 34px; }
+.categories-heading h2, .featured-heading h2, .why-choose-us-heading h2 { color: #29283d; font-size: clamp(1.9rem, 3.3vw, 2.65rem); font-weight: 700; letter-spacing: -.04em; }
+.categories-heading h2 span, .featured-heading h2 span, .why-choose-us-heading h2 em { color: #6448cf; }
+.categories-heading p, .featured-heading p, .why-choose-us-heading p { color: #6c6c7d; font-size: .95rem; }
+.category-card { border-color: #ecebf2; border-radius: 8px; box-shadow: 0 3px 12px rgb(37 35 68 / 5%); transition: transform .18s ease, box-shadow .18s ease; }
+.category-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgb(37 35 68 / 9%); }
+.category-icon { color: #6146cd; border-radius: 9px; }
+.category-content h3 { color: #29283d; font-size: .94rem; }
+.category-content p { color: #737386; font-size: .79rem; }
+.category-course-count { color: #6146cd; }
+.category-arrow { background: #f2efff; color: #6146cd; }
+
+.featured-courses { padding: 78px 5.5vw 84px; background: #f7f7fb; }
+.featured-heading { justify-content: space-between; text-align: left; margin-bottom: 28px; }
+.all-courses-link { position: static; flex: 0 0 auto; transform: none; border-color: #d9d2f2; border-radius: 5px; color: #5e43c4; }
+.featured-course-card { border-color: #ecebf2; border-radius: 8px; box-shadow: 0 3px 12px rgb(37 35 68 / 5%); }
+.featured-course-image { height: 150px; }
+.featured-course-body { padding: 15px; }
+.featured-course-body h3 { color: #29283d; font-size: 1rem; }
+.featured-course-actions a { border-radius: 5px; border-color: #6246ce; color: #5d41c7; }
+.featured-course-actions .enroll-course { background: #6044cf; }
+
+.why-choose-us { padding: 76px 5.5vw 84px; background: #fff; }
+.why-choose-us-heading { margin-bottom: 30px; }
+.why-choose-us-heading > span { background: #f0edfc; color: #6448cf; letter-spacing: .07em; }
+.benefit-card { min-height: 190px; border: 1px solid #eeedf3; border-radius: 8px; background: #fff; }
+.benefit-lavender, .benefit-blue, .benefit-green, .benefit-peach, .benefit-pink { border-color: #eeedf3; background: #fff; }
+.benefit-icon { color: #684bd1; filter: none; }
+.benefit-card h3 { color: #303047; }
+.benefit-card p { color: #707083; }
+
+.statistics-section { padding: 48px 5.5vw 62px; background: #f7f7fb; }
+.statistics-grid { max-width: 1120px; }
+.statistics-card, .statistics-card-featured { min-height: 140px; padding: 19px; border: 1px solid #ecebf2; border-radius: 8px; background: #fff; color: #29283d; box-shadow: none; }
+.statistics-card:nth-child(n) { transform: none; }
+.statistics-card:hover { transform: translateY(-3px); box-shadow: 0 9px 22px rgb(37 35 68 / 7%); }
+.statistics-card-featured { border-color: #6044cf; background: #6044cf; color: #fff; }
+.statistics-icon { width: 38px; height: 38px; background: #f0edfc; color: #6044cf; }
+.statistics-card-featured .statistics-icon { background: #fff; color: #6044cf; }
+.statistics-value { font-size: 1.55rem; font-weight: 700; }
+.statistics-label { color: #79798a; font-size: .79rem; }
+.statistics-card-featured .statistics-label { color: rgb(255 255 255 / 80%); }
+.statistics-trust { color: #686879; }
+.statistics-trust span { background: #5a9b70; }
+
+.instructor-section { padding: 72px 5.5vw; background: #fff; }
+.instructor-profile-card { max-width: 1280px; border-color: #ecebf2; border-radius: 8px; box-shadow: 0 4px 18px rgb(37 35 68 / 5%); }
+.instructor-bio h2 { color: #29283d; }
+.instructor-stats > a { border-radius: 5px; background: #6044cf; }
+.instructor-expertise li { border-color: #e7e2f7; border-radius: 4px; background: #f7f5ff; color: #6044cf; }
+
+.student-reviews { padding: 76px 0 68px; background: #f7f7fb; }
+.student-reviews h2 { margin-bottom: 30px; color: #29283d; font-size: clamp(1.9rem, 3.3vw, 2.6rem); letter-spacing: -.04em; }
+.student-reviews-track { gap: 18px; }
+.student-review-card { min-height: 250px; padding: 25px; border-color: #e9e8ef; border-radius: 8px; box-shadow: none; }
+.student-review-card:hover { border-color: #b8a8ee; box-shadow: 0 10px 25px rgb(35 35 55 / 7%); }
+.student-review-author img { border-radius: 50%; }
+.student-review-author p { background: transparent; color: #88889a; font-size: .83rem; }
+.student-review-card blockquote { margin-top: 22px; color: #626276; font-size: 1rem; }
+.student-reviews-pagination .is-active { background: #6044cf; }
+
+.faq-section { max-width: 880px; margin: 0 auto; padding: 76px 24px 84px; }
+.faq-title { margin-bottom: 28px; color: #29283d; font-size: clamp(1.9rem, 3.3vw, 2.5rem); letter-spacing: -.04em; }
+.faq-item { margin: 0; padding: 15px 0; border-bottom-color: #e9e8ef; }
+.faq-question { color: #343449; font-size: 1rem; font-weight: 600; }
+.faq-icon { color: #6044cf; font-size: 1rem; }
+.faq-answer { max-width: 740px; color: #6e6e80; font-size: .92rem; }
+
+.footer.bg-primary { padding-top: 48px !important; background: #27263b !important; }
+.footer h5 { font-size: .93rem; }
+.footer a { color: #d8d7e2; font-size: .84rem; }
+.footer a:hover { color: #fff; }
+.footer .border-top { border-color: rgb(255 255 255 / 16%) !important; }
+.footer small { color: #c7c6d1; }
+
+@media (max-width: 850px) {
+  .featured-course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .benefits-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .statistics-card, .statistics-card-featured { min-height: 130px; }
+}
+@media (max-width: 600px) {
+  .course-categories, .featured-courses, .why-choose-us, .instructor-section { padding: 54px 18px; }
+  .categories-heading { margin-bottom: 24px; }
+  .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .featured-heading { align-items: flex-start; gap: 12px; }
+  .featured-heading p { font-size: .85rem; }
+  .all-courses-link { align-self: center; padding: 7px 9px; font-size: .7rem; white-space: nowrap; }
+  .featured-course-image { height: 112px; }
+  .featured-course-body { padding: 11px; }
+  .featured-course-actions a { font-size: .65rem; }
+  .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .statistics-section { padding: 42px 20px 50px; }
+  .student-reviews { padding: 54px 0 48px; }
+  .faq-section { padding: 54px 20px; }
+}
+@media (max-width: 420px) {
+  .category-grid, .featured-course-grid { grid-template-columns: 1fr; }
+  .category-image-wrap { height: 145px; }
+  .featured-heading { flex-direction: column; }
+  .all-courses-link { align-self: flex-start; }
+  .featured-course-image { height: 150px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
