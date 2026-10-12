@@ -37,8 +37,8 @@ export default function Header() {
               <input className="form-control" style={{ width: '400px' }} type="search" placeholder="Search..." aria-label="Search" />
               <button className="btn btn-light ms-2" type="submit"><FaSearch /></button>
             </form>
-            <a className="nav-link" href="#"><FaUser className="me-2" />Login</a>
-            <a className="nav-link" href="#"><FaUserPlus className="me-2" />Sign Up</a>
+            <a className="nav-link" href="#/login"><FaUser className="me-2" />Login</a>
+            <a className="nav-link" href="#/register"><FaUserPlus className="me-2" />Sign Up</a>
             <a className="btn btn-outline-dark rounded-pill px-3" href="#">
               <FaShoppingCart className="me-2" />Cart
             </a>

@@ -1,5 +1,16 @@
 # React + Vite
 
+## Registration API
+
+Registration is saved by the Express API to the MongoDB `Myweb.users` collection. The API stores a bcrypt password hash and does not store the confirm-password value.
+
+1. Copy `server/.env.example` to `server/.env`.
+2. Set `MONGO_URI` in `server/.env` to your MongoDB connection string. Keep this file private; it is ignored by Git.
+3. In one terminal, run `npm run server` from this project directory.
+4. In another terminal, run `npm run dev` and submit the registration form.
+
+The API listens on port `5001` by default. For deployment, host the API separately, set `VITE_API_BASE_URL` to its public HTTPS URL when building the frontend, and set `FRONTEND_ORIGINS` on the API to the frontend's origin.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
