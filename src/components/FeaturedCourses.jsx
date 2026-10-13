@@ -38,7 +38,7 @@ export default function FeaturedCourses() {
             <h2 id="featured-courses-title"><span>Featured Courses</span></h2>
             <p>Build in-demand skills with our expert-led courses and take your career to the next level.</p>
           </div>
-          <a className="all-courses-link" href="#courses">View All Courses <span aria-hidden="true">→</span></a>
+          <a className="all-courses-link" href="#/courses">View All Courses <span aria-hidden="true">→</span></a>
         </header>
 
         <div className="row g-3 g-xl-4 featured-course-grid">

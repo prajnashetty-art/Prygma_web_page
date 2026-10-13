@@ -13,7 +13,7 @@ export default function Hero() {
               Learn in-demand skills from people who use them every day. Clear lessons, practical projects, and a pace that works for you.
             </p>
             <div className="hero-actions">
-              <a className="hero-primary-action" href="#courses">Explore courses <FaArrowRight aria-hidden="true" /></a>
+              <a className="hero-primary-action" href="#/courses">Explore courses <FaArrowRight aria-hidden="true" /></a>
               <a className="hero-secondary-action" href="#categories">Browse categories</a>
             </div>
             <div className="hero-proof" aria-label="Course benefits">

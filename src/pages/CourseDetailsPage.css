@@ -1,0 +1,209 @@
+.course-details-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.manual-course-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.manual-course-page {
+  flex: 1;
+  background-color: #f3f4ff;
+  background-image: linear-gradient(115deg, #f0f3ff 0%, #fafaff 48%, #eff1ff 100%);
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.course-details-main {
+  flex: 1;
+  padding: 35px 24px 64px;
+  background: #f5f7fc;
+}
+
+.course-breadcrumb {
+  width: min(calc(100% - 30px), 1360px);
+  margin: 16px auto 0;
+  color: #697387;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: .95rem;
+}
+
+.course-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-breadcrumb li + li::before {
+  margin-right: 8px;
+  color: #9aa2b0;
+  content: '>';
+}
+
+.course-breadcrumb a {
+  color: #6044cf;
+  text-decoration: none;
+}
+
+.course-breadcrumb a:hover { text-decoration: underline; }
+.course-breadcrumb [aria-current="page"] { color: #3f485a; font-weight: 700; }
+
+.course-details-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.course-details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #5b39df;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.course-details-card {
+  overflow: hidden;
+  border: 1px solid #dedfe3;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.course-details-image {
+  min-height: 300px;
+  background-color: #d8e5f6;
+  background-position: center;
+  background-size: cover;
+}
+
+.course-details-content {
+  max-width: 780px;
+  padding: 34px 40px 38px;
+}
+
+.course-details-academy {
+  margin: 0 0 4px;
+  color: #612fff;
+  font-size: 1.05rem;
+}
+
+.course-details-content h1 {
+  margin: 0 0 10px;
+  color: #20212a;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 800;
+}
+
+.course-details-description {
+  margin: 0 0 22px;
+  color: #565c66;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.course-details-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e7e7e9;
+  color: #50545b;
+}
+
+.course-details-meta > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.course-details-meta .course-level-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #d8f3e2;
+  color: #168044;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.course-details-meta .level-intermediate { background: #e28a2e; color: #fff; }
+.course-details-meta .level-advanced { background: #9a35d6; color: #fff; }
+
+.course-details-purchase {
+  padding-top: 20px;
+}
+
+.course-details-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.course-details-price strong {
+  color: #111;
+  font-size: 1.8rem;
+}
+
+.course-details-price del,
+.course-details-purchase > p {
+  color: #666d76;
+}
+
+.course-details-price > span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #ffe0e2;
+  color: #f04455;
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.course-details-purchase > p {
+  margin: 3px 0 16px;
+  font-size: .9rem;
+}
+
+.course-details-enroll {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.course-details-enroll:hover {
+  background: #303030;
+  color: #fff;
+}
+
+.course-details-not-found {
+  padding: 64px 24px;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+.course-details-not-found a {
+  color: #5b39df;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .course-details-main { padding: 24px 16px 42px; }
+  .course-details-image { min-height: 210px; }
+  .course-details-content { padding: 24px 20px 26px; }
+}

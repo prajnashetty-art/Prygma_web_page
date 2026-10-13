@@ -5,7 +5,7 @@ const expertise = ['Manual Testing', 'Automation Testing', 'API Testing', 'MySQL
 
 export default function InstructorProfile() {
   return (
-    <section className="instructor-section" aria-label="Featured instructor">
+    <section className="instructor-section" id="instructor-profile" aria-label="Featured instructor">
       <article className="instructor-profile-card">
         <div className="instructor-identity">
           <div className="instructor-photo-wrap">

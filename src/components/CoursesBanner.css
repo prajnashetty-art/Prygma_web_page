@@ -1,0 +1,80 @@
+.courses-banner {
+  display: flex;
+  min-height: 248px;
+  align-items: center;
+  justify-content: center;
+  padding: 38px 24px 48px;
+  background: #d2e7ff;
+  text-align: center;
+}
+
+.courses-banner-content {
+  width: min(100%, 640px);
+}
+
+.courses-banner h1 {
+  margin: 0 0 8px;
+  color: #172438;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+
+.courses-banner p {
+  margin: 0 0 25px;
+  color: #42536a;
+  font-size: 1rem;
+}
+
+.courses-search {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  gap: 11px;
+  padding: 0 15px;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgb(35 58 83 / 14%);
+  color: #748095;
+  text-align: left;
+}
+
+.courses-search svg {
+  flex: 0 0 auto;
+  font-size: .9rem;
+}
+
+.courses-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #26354a;
+  font: inherit;
+  font-size: .9rem;
+}
+
+.courses-search input::placeholder {
+  color: #99a3b2;
+  opacity: 1;
+}
+
+.courses-search:focus-within {
+  outline: 2px solid #6d9fd4;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .courses-banner {
+    min-height: 235px;
+    padding: 32px 20px 40px;
+  }
+
+  .courses-banner p {
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: .92rem;
+  }
+}

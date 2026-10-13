@@ -1,0 +1,217 @@
+.course-listing {
+  padding: 42px 5.5vw 64px;
+  background: #f5f7fc;
+}
+
+.course-listing-grid {
+  display: grid;
+  max-width: 1440px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.course-search-empty {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 38px 20px;
+  color: #656b75;
+  text-align: center;
+}
+
+.course-listing-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dedfe3;
+  border-radius: 15px;
+  background: #fdfdfd;
+}
+
+.course-listing-image {
+  display: block;
+  position: relative;
+  height: 180px;
+  background-color: #d8e5f6;
+  background-position: center;
+  background-size: cover;
+  transition: filter .18s ease;
+}
+
+.course-listing-image:hover {
+  filter: brightness(.94);
+}
+
+.course-listing-image:focus-visible {
+  outline: 3px solid #6540ff;
+  outline-offset: -3px;
+}
+
+
+.course-listing-body {
+  padding: 16px 15px 14px;
+}
+
+.course-listing-body h2 {
+  margin: 0 0 2px;
+  color: #33343a;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.course-academy {
+  margin: 8px 0 3px;
+  color: #612fff;
+  font-size: .94rem;
+}
+
+.course-description {
+  min-height: 3.9em;
+  margin: 0 0 10px;
+  color: #565c66;
+  font-size: .87rem;
+  line-height: 1.5;
+}
+
+.course-meta {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  color: #50545b;
+  font-size: .87rem;
+}
+
+.course-meta > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.course-meta svg {
+  color: #777e88;
+}
+
+.course-level-badge {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #9a35d6;
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 600;
+}
+
+.course-level-badge.level-beginner { background: #d8f3e2; color: #168044; }
+.course-level-badge.level-intermediate { background: #e28a2e; }
+
+.course-card-bottom {
+  margin-top: 20px;
+  padding-top: 13px;
+  border-top: 1px solid #e7e7e9;
+}
+
+.course-student-avatars {
+  display: flex;
+  align-items: center;
+  padding-left: 3px;
+}
+
+.course-student-avatars span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  margin-left: -3px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #5e7895;
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+}
+
+
+.course-listing-price {
+  color: #111;
+  font-size: 1.25rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.course-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 4px;
+  white-space: nowrap;
+}
+
+.course-price-row del {
+  color: #777e88;
+  font-size: .8rem;
+}
+
+.course-price-row > span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #ffe0e2;
+  color: #f04455;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.course-payment-note {
+  margin: 0 0 14px;
+  color: #666d76;
+  font-size: .78rem;
+}
+
+.course-listing-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.course-listing-actions a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #d4d5d8;
+  border-radius: 999px;
+  color: #62656a;
+  font-size: .91rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .16s ease, color .16s ease;
+}
+
+.course-listing-actions .course-view-action:hover {
+  background: #f2f2f3;
+}
+
+.course-listing-actions .course-enroll-action {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.course-listing-actions .course-enroll-action:hover {
+  background: #303030;
+}
+
+@media (max-width: 1050px) {
+  .course-listing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .course-listing { padding: 28px 18px 42px; }
+  .course-listing-heading { margin-bottom: 22px; }
+  .course-listing-grid { grid-template-columns: 1fr; gap: 18px; }
+  .course-listing-image { height: 190px; }
+  .course-listing-body { padding: 19px; }
+}
